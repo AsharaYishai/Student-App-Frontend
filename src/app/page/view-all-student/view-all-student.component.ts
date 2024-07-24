@@ -69,9 +69,36 @@ export class ViewAllStudentComponent {
       }
     });
   }
+  public selectedStudent:any = {
+    "id": null,
+    "firstName": null,
+    "lastName": null,
+    "dob": null,
+    "address": null,
+    "city": null,
+    "religion": null,
+    "gender": null,
+    "email": null,
+    "phoneNumber": null,
+    "postalCode": null,
+    "zipCode": null
+  };
 
-  updateStudent(){
+  updateStudent(student:any){
+    this.selectedStudent = student;
+
+    if(student!=null){
+      this.selectedStudent = student;
+    }
+    console.log(student);
     
+  }
+
+  saveUpdateStudent(student:any){
+    this.http.put("http://localhost:8080/student-controller/update-student",this.selectedStudent).subscribe(res=>{
+      console.log(res);
+      
+    })
 
       
   }
