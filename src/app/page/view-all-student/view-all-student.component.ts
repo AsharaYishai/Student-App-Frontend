@@ -84,7 +84,7 @@ export class ViewAllStudentComponent {
     "zipCode": null
   };
 
-  updateStudent(student:any){
+  updateStudent(student: any){
     this.selectedStudent = student;
 
     if(student!=null){
@@ -94,12 +94,10 @@ export class ViewAllStudentComponent {
     
   }
 
-  saveUpdateStudent(student:any){
+  saveUpdateStudent(){
     this.http.put("http://localhost:8080/student-controller/update-student",this.selectedStudent).subscribe(res=>{
       console.log(res);
-      
-    })
-
-      
+      this.loadStudentTable();
+    }) 
   }
 }
