@@ -1,0 +1,32 @@
+<h1 class="text-center mb-5 bg-black text-white fw-bolder p-4">View All Student</h1>
+
+<div class="container">
+    <table class="table ">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Religion</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>PostalCode</th>
+            <th>ZipCode</th>
+        </tr>
+        <tr *ngFor="let student of studentList">
+            <td>{{student.id}}</td>
+            <td>{{student.firstName+" "+student.lastName}}</td>
+            <td>{{student.dob}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.city}}</td>
+            <td>{{student.religion}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.phoneNumber}}</td>
+            <td>{{student.postalCode}}</td>
+            <td>{{student.zipCode}}</td>
+        </tr>
+    </table>
+</div>
